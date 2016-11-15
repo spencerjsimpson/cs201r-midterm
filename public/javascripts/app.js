@@ -19,6 +19,8 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 		$scope.year = '';
 		$scope.miles = '';
 		$scope.pictureUrl = '';
+
+		$scope.cars.push(car);
 	}
 
 }]);
