@@ -30,7 +30,7 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 	};
 
 	$scope.upvote = function(car) {
-		return $http.put('/car' + car._id + '/upvote').success(function(data) {
+		return $http.put('/cars/' + car._id + '/upvote').success(function(data) {
 			console.log("Successful Upvote!");
 			car.upvotes = data.upvotes;
 		})
@@ -49,7 +49,7 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 	};
 
 	$scope.delete = function(car) {
-		
+
 	};
 
 }]);
