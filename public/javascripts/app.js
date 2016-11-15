@@ -9,7 +9,7 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 			model: $scope.model,
 			year: $scope.year,
 			miles: $scope.miles,
-			pictureUrl: $scope.pictureUrl
+			pictureUrl: $scope.pictureUrl,
 			upvotes: 0
 		};
 
