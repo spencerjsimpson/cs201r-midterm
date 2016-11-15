@@ -20,7 +20,19 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 		$scope.miles = '';
 		$scope.pictureUrl = '';
 
-		$scope.cars.push(car);
+		$http.post('/car', car).succes(function(data) {
+			$scope.cars.push(data);
+		});
+
+		console.log(cars);
+	};
+
+	$scope.incrementUpvotes = function(car) {
+		$scope.upvote(car);
+	};
+
+	$scope.upvote = function {
+
 	}
 
 }]);
