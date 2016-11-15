@@ -10,6 +10,7 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 			year: $scope.year,
 			miles: $scope.miles,
 			pictureUrl: $scope.pictureUrl
+			upvotes: 0
 		};
 
 		console.log(car);
@@ -20,7 +21,7 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 		$scope.miles = '';
 		$scope.pictureUrl = '';
 
-		$http.post('/car', car).succes(function(data) {
+		$http.post('/car', car).success(function(data) {
 			$scope.cars.push(data);
 		});
 
