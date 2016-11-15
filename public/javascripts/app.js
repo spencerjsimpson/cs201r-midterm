@@ -31,8 +31,4 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 		$scope.upvote(car);
 	};
 
-	$scope.upvote = function {
-
-	}
-
 }]);
