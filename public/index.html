@@ -1,0 +1,81 @@
+<html>
+<head>
+
+	<title>BYU Car Sales</title>
+
+	<!-- Materialize CSS & Google Fonts -->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+	<!-- Viewport Configurations -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body ng-app="cars" ng-controller="MainCtrl">
+	
+		<!-- Header Section -->
+	  <div class="section materialize-red lighten-2" id="banner">
+	    <div class="container">  
+	      <div class="row">
+	      	<div class="col s12">
+	      		<h1 class="header center white-text light">BYU Car Sales</h1>
+	        </div>
+        </div> <!-- row -->
+    	</div> <!-- container -->
+	  </div> <!-- section -->
+
+	<div class="container">
+		<div class="row">
+			<h4 class="header light">Please Enter a Car for the Database:</h4>
+		</div>
+		<div class="row">
+			<form class="col s12" ng-submit="addCar()">  <!-- Form starts here (add ng-action functionality) -->
+				
+				<div class="row">
+					<div class="input-field col s12 m6">
+						<input id="make" type="text" ng-model="make">
+						<label for="make">Make</label>
+					</div>
+					<div class="input-field col s12 m6">
+						<input id="model" type="text" ng-model="model">
+						<label for="model">Model</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12 m4">
+						<input id="year" type="text" ng-model="year">
+						<label for="year">Year</label>
+					</div>
+					<div class="input-field col s12 m4">
+						<input id="miles" type="text" ng-model="miles">
+						<label for="miles">Miles</label>
+					</div>
+					<div class="input-field col s12 m4">
+						<input id="picture-url" type="text" ng-model="pictureUrl">
+						<label for="picture-url">Picture URL</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<button class="btn waves-effect waves-light" type="submit" class="col s12">Add Car</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+
+
+	<!-- JavaScript Dependencies -->
+	<!-- JQUERY -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  
+
+	<!-- ANGULAR -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="javascripts/app.js"></script>
+
+</body>
+</html>

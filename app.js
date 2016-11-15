@@ -4,6 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose'); //include mongoose dependency
+mongoose.connect('mongodb://localhost/cars'); // connect to the database
+require('./models/Cars'); //include the dog model for relational database
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
