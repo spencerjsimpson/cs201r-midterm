@@ -5,17 +5,25 @@ var Car = mongoose.model('Car');
 
 // Get cars from Database
 router.get('/cars', function(req, res, next) {
+  console.log("in GET /cars");
   Car.find(function(err, cars){
-    if(err){ return next(err); }
+    if(err){ 
+    	return next(err);
+    	console.log("GET/cars error");
+    }
     res.json(cars);
   });
 });
 
 // Add a car to the Database
 router.post('/cars', function(req, res, next) {
+	console.log("in POST/cars");
   var car = new Car(req.body);
   car.save(function(err, car){
-    if(err){ return next(err); }
+    if(err){ 
+    	return next(err); 
+    	console.log("POST/cars error");
+    }
     res.json(car);
   });
 });

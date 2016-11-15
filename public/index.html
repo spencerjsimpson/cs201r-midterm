@@ -68,7 +68,7 @@
 			<div class="col s6 light" ng-repeat="car in cars | orderBy: 'make' | orderBy: 'model' | orderBy: 'upvotes'">
 				<img ng-src="{{ car.pictureUrl }}" height="50px"/>
 				{{ car.make }} {{ car.model }} {{ car.year }} {{ car.miles }} - upvotes: {{ car.upvotes }}
-				<i class="material-icons" ng-click="incrementUpvote(car)">thumb_up</i>
+				<i class="material-icons" ng-click="incrementUpvotes(car)">thumb_up</i>
 				<i class="material-icons" ng-click="delete(car)">clear</i>
 			</div>
 		</div>
