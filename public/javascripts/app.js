@@ -21,11 +21,11 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 		$scope.miles = '';
 		$scope.pictureUrl = '';
 
-		$http.post('/car', car).success(function(data) {
+		$http.post('/cars', car).success(function(data) {
 			$scope.cars.push(data);
 		});
 
-		console.log(cars);
+		console.log($scope.cars);
 	};
 
 	$scope.incrementUpvotes = function(car) {
