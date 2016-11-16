@@ -43,6 +43,22 @@ router.param('carid', function(req, res, next, id) {
 	});
 });
 
+router.put('/cars/:carid/delete', function(req, res, next) {
+	console.log("in PUT/:carid/delete");
+	req.car.remove(function(err, car) {
+		if(err) {
+			return next(err);
+		}
+
+    var response = {
+      message: "Car successfully deleted",
+      id: car._id
+    };
+
+    res.send(response);
+	});
+}
+
 // Gets a car with a given ID
 router.get('/cars/:carid', function(req, res) {
 	res.json(req.car);

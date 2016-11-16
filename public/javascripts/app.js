@@ -3,6 +3,7 @@ var app = angular.module('cars',[]);
 app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 	$scope.cars = [];
 
+	// Add Functionality
 	$scope.addCar = function() {
 		var car = {
 			make: $scope.make,
@@ -29,6 +30,8 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 		console.log($scope.cars);
 	};
 
+
+	// Upvote Functionality
 	$scope.upvote = function(car) {
 		return $http.put('/cars/' + car._id + '/upvote').success(function(data) {
 			console.log("Successful Upvote!");
@@ -41,6 +44,21 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 		$scope.getAll();
 	};
 
+
+	// Delete Functionality
+	$scope.delete = function(car) {
+		return $http.put('/cars/' + car._id + 'delete').success(function(data) {
+			console.log("data successfully deleted");
+		})
+	};
+
+	$scope.deleteCar = function(car) {
+		$scope.delete(car);
+		$scope.getAll();
+	}
+
+
+	// Get all functionality
 	$scope.getAll = function() {
 		return $http.get('/cars').success(function(data) {
 			console.log("Successful getAll!");
@@ -48,8 +66,5 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 		});
 	};
 
-	$scope.delete = function(car) {
-
-	};
-
+	$scope.getAll();
 }]);

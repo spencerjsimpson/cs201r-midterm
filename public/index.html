@@ -58,11 +58,8 @@
 				</div>
 
 				<div class="row">
-					<div class="col s6 center">
+					<div class="col s12">
 						<button class="btn waves-effect waves-light" type="submit">Add Car</button>
-					</div>
-					<div class="col s6 center">
-						<a class="waves-effect waves-teal btn-flat" ng-click="getAll()">Show Cars</a>
 					</div>
 				</div>
 
@@ -71,13 +68,13 @@
 
 		<div class="row">
 			<div class="col s12 light" ng-repeat="car in cars | orderBy: '-make' | orderBy: '-model' | orderBy: '-upvotes'">
-				<img ng-src="{{ car.pictureUrl }}" height="50px"/>
 				<div class="valign-wrapper">
-					<h6 class="valign">
+					<img ng-src="{{ car.pictureUrl }}" height="50px"/>
+					<h6 class="valign light">
 						{{ car.make }} {{ car.model }} {{ car.year }} {{ car.miles }} - upvotes: {{ car.upvotes }}
 					</h6>
 					<i class="material-icons valign" ng-click="incrementUpvotes(car)">thumb_up</i>
-					<i class="material-icons valign" ng-click="delete(car)">clear</i>
+					<i class="material-icons valign" ng-click="deleteCar(car)">clear</i>
 				</div>
 			</div>
 		</div>
