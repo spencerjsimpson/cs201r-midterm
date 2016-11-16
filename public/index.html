@@ -78,17 +78,22 @@
 				</div>
 				
 				<div class="col s8">
-					<div class="valign-wrapper">
-						<h5 class="valign light center">
+					<div class="valign-wrapper center">
+						<h5 class="valign light">
 							{{ car.make }} {{ car.model }} {{ car.year }} {{ car.miles }} - upvotes: {{ car.upvotes }}  
 						</h5>
 					</div>
 				</div>
 				
 				<div class="col s1">
-					<div class="valign-wrapper">
-						<i class="material-icons medium valign center" ng-click="incrementUpvotes(car)">thumb_up</i>
-						<i class="material-icons medium valign center" ng-click="deleteCar(car)">clear</i>
+					<div class="valign-wrapper center">
+						<i class="material-icons valign" ng-click="incrementUpvotes(car)">thumb_up</i>
+					</div>
+				</div>
+
+				<div class="col s1">
+					<div class="valign-wrapper center">
+						<i class="material-icons valign" ng-click="deleteCar(car)">clear</i>
 					</div>
 				</div>
 			
