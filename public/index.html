@@ -71,7 +71,7 @@
 
 	<div class="section">
 		<div class="container">
-			<div class="row" ng-repeat="car in cars | orderBy: '-make' | orderBy: '-model' | orderBy: '-upvotes'">
+			<div class="row" ng-repeat="car in cars | orderBy: '-upvotes' | orderBy: '-model' | orderBy: '-make'">
 				
 				<div class="col s2">
 					<div class="valign-wrapper">
