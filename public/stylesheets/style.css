@@ -2,3 +2,6 @@ i:hover {
 	cursor:hand;
 }
 
+.upvotes {
+	border-radius: 100%;
+}
