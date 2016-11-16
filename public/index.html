@@ -25,59 +25,76 @@
 	  </div> <!-- section -->
 
 	<div class="container">
-		<div class="row">
-			<h4 class="header light">Please Enter a Car for the Database:</h4>
-		</div>
-		<div class="row">
-			<form class="col s12" ng-submit="addCar()">  <!-- Form starts here (add ng-action functionality) -->
-				
-				<div class="row">
-					<div class="input-field col s12 m6">
-						<input id="make" type="text" ng-model="make">
-						<label for="make">Make</label>
+		<div class="section">
+			<div class="row">
+				<h4 class="header light">Please Enter a Car for the Database:</h4>
+			</div>
+			<div class="row">
+				<form class="col s12" ng-submit="addCar()">  <!-- Form starts here (add ng-action functionality) -->
+					
+					<div class="row">
+						<div class="input-field col s12 m6">
+							<input id="make" type="text" ng-model="make">
+							<label for="make">Make</label>
+						</div>
+						<div class="input-field col s12 m6">
+							<input id="model" type="text" ng-model="model">
+							<label for="model">Model</label>
+						</div>
 					</div>
-					<div class="input-field col s12 m6">
-						<input id="model" type="text" ng-model="model">
-						<label for="model">Model</label>
-					</div>
-				</div>
 
-				<div class="row">
-					<div class="input-field col s12 m4">
-						<input id="year" type="text" ng-model="year">
-						<label for="year">Year</label>
+					<div class="row">
+						<div class="input-field col s12 m4">
+							<input id="year" type="text" ng-model="year">
+							<label for="year">Year</label>
+						</div>
+						<div class="input-field col s12 m4">
+							<input id="miles" type="text" ng-model="miles">
+							<label for="miles">Miles</label>
+						</div>
+						<div class="input-field col s12 m4">
+							<input id="picture-url" type="text" ng-model="pictureUrl">
+							<label for="picture-url">Picture URL</label>
+						</div>
 					</div>
-					<div class="input-field col s12 m4">
-						<input id="miles" type="text" ng-model="miles">
-						<label for="miles">Miles</label>
-					</div>
-					<div class="input-field col s12 m4">
-						<input id="picture-url" type="text" ng-model="pictureUrl">
-						<label for="picture-url">Picture URL</label>
-					</div>
-				</div>
 
-				<div class="row">
-					<div class="col s12">
-						<button class="btn waves-effect waves-light" type="submit">Add Car</button>
+					<div class="row">
+						<div class="col s12">
+							<button class="btn waves-effect waves-light" type="submit">Add Car</button>
+						</div>
 					</div>
-				</div>
 
-			</form>
-		</div>
-
-		<div class="row">
-			<div class="col s12 light" ng-repeat="car in cars | orderBy: '-make' | orderBy: '-model' | orderBy: '-upvotes'">
-				<div class="valign-wrapper">
-					<img ng-src="{{ car.pictureUrl }}" height="50px"/>
-					<h6 class="valign light">
-						{{ car.make }} {{ car.model }} {{ car.year }} {{ car.miles }} - upvotes: {{ car.upvotes }}
-					</h6>
-					<i class="material-icons valign" ng-click="incrementUpvotes(car)">thumb_up</i>
-					<i class="material-icons valign" ng-click="deleteCar(car)">clear</i>
-				</div>
+				</form>
 			</div>
 		</div>
+
+		<div class="section">
+			<div class="row" ng-repeat="car in cars | orderBy: '-make' | orderBy: '-model' | orderBy: '-upvotes'">
+				
+				<div class="col s2">
+					<div class="valign-wrapper">
+						<img ng-src="{{ car.pictureUrl }}" height="50px"/>
+					</div>
+				</div>
+				
+				<div class="col s8">
+					<div class="valign-wrapper">
+						<h5 class="valign light">
+							{{ car.make }} {{ car.model }} {{ car.year }} {{ car.miles }} - upvotes: {{ car.upvotes }}  
+						</h5>
+					</div>
+				</div>
+				
+				<div class="col s2">
+					<div class="valign-wrapper">
+						<i class="material-icons valign" ng-click="incrementUpvotes(car)">thumb_up</i>
+						<i class="material-icons valign" ng-click="deleteCar(car)">clear</i>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+
 	</div>
 
 
