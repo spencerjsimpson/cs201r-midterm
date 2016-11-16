@@ -57,7 +57,7 @@ router.put('/cars/:carid/delete', function(req, res, next) {
 
     res.send(response);
 	});
-}
+});
 
 // Gets a car with a given ID
 router.get('/cars/:carid', function(req, res) {
