@@ -47,7 +47,7 @@ app.controller('MainCtrl', ['$scope','$http', function($scope, $http) {
 
 	// Delete Functionality
 	$scope.delete = function(car) {
-		return $http.put('/cars/' + car._id + 'delete').success(function(data) {
+		return $http.put('/cars/' + car._id + '/delete').success(function(data) {
 			console.log("data successfully deleted");
 		})
 	};
